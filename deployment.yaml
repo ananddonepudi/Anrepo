@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginx
+  name:  my-webapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app:  my-webapp
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app:  my-webapp
+    spec:
+      containers:
+      - image: 344249396000.dkr.ecr.ap-south-1.amazonaws.com/mysampleapps:latest
+        name: demoapp
+   
